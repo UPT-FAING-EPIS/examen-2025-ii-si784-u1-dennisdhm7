@@ -6,14 +6,14 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ?? Configuración de conexión a SQL Server
+// ?? Configuraciï¿½n de conexiï¿½n a SQL Server
 builder.Services.AddDbContext<AppDbContext>(opciones =>
     opciones.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // ?? Agregar controladores
 builder.Services.AddControllers();
 
-// ?? Swagger con autenticación JWT
+// ?? Swagger con autenticaciï¿½n JWT
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(opciones =>
 {
@@ -44,7 +44,7 @@ builder.Services.AddSwaggerGen(opciones =>
     });
 });
 
-// ?? Configuración de autenticación con JWT
+// ?? Configuraciï¿½n de autenticaciï¿½n con JWT
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(opciones =>
     {
@@ -62,12 +62,17 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-// ?? Autorización (roles: admin, instructor, usuario)
+// ?? Autorizaciï¿½n (roles: admin, instructor, usuario)
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-// ?? Configuración del pipeline
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.Migrate();
+}
+// ?? Configuraciï¿½n del pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
