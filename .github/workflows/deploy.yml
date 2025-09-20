@@ -1,4 +1,4 @@
-name: Deploy API to Azure with Terraform
+name: 🚀 Deploy API to Azure with Terraform
 
 on:
   push:
@@ -18,34 +18,27 @@ jobs:
         with:
           terraform_version: 1.8.5   # o la última estable
 
-      - name: 🔐 Autenticación en Azure
-        run: |
-          echo "Configurando credenciales de Azure..."
-          echo "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
-          echo "${{ secrets.AZURE_CLIENT_ID }}"
-          echo "${{ secrets.AZURE_CLIENT_SECRET }}"
-          echo "${{ secrets.AZURE_TENANT_ID }}"
-        env:
-          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-          ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+      - name: 🔐 Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: |
+            {
+              "clientId": "${{ secrets.AZURE_CLIENT_ID }}",
+              "clientSecret": "${{ secrets.AZURE_CLIENT_SECRET }}",
+              "subscriptionId": "${{ secrets.AZURE_SUBSCRIPTION_ID }}",
+              "tenantId": "${{ secrets.AZURE_TENANT_ID }}"
+            }
 
       - name: 📦 Terraform Init
         run: terraform -chdir=terraform init
 
       - name: 📝 Terraform Plan
         run: terraform -chdir=terraform plan
-        env:
-          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-          ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
 
       - name: 🚀 Terraform Apply
         run: terraform -chdir=terraform apply -auto-approve
-        env:
-          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-          ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+
+      - name: 🌍 Mostrar URL de la API
+        run: |
+          echo "API desplegada en:"
+          terraform -chdir=terraform output app_service_url
