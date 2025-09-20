@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Matricula.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6c04bbdd4b23a33d2b92266a5490c40a8478bcfd")]
 [assembly: System.Reflection.AssemblyProductAttribute("Matricula.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Matricula.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

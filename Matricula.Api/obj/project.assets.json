@@ -4175,11 +4175,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chris\\source\\repos\\Matricula.Api\\Matricula.Api.csproj",
+      "projectUniqueName": "E:\\Calidad Y Pruebas de Software\\examen-2025-ii-si784-u1-dennisdhm7\\Matricula.Api\\Matricula.Api.csproj",
       "projectName": "Matricula.Api",
-      "projectPath": "C:\\Users\\chris\\source\\repos\\Matricula.Api\\Matricula.Api.csproj",
+      "projectPath": "E:\\Calidad Y Pruebas de Software\\examen-2025-ii-si784-u1-dennisdhm7\\Matricula.Api\\Matricula.Api.csproj",
       "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chris\\source\\repos\\Matricula.Api\\obj\\",
+      "outputPath": "E:\\Calidad Y Pruebas de Software\\examen-2025-ii-si784-u1-dennisdhm7\\Matricula.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

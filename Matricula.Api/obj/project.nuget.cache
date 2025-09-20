@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LNHkXr+ODHM=",
+  "dgSpecHash": "nsQ7fXj5llU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\chris\\source\\repos\\Matricula.Api\\Matricula.Api.csproj",
+  "projectFilePath": "E:\\Calidad Y Pruebas de Software\\examen-2025-ii-si784-u1-dennisdhm7\\Matricula.Api\\Matricula.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\chris\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\chris\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

@@ -1,2 +1,23 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/JdReedF3)
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=20612803)
+# 📘 Proyecto: Aplicación de Matrícula de Cursos Online
+
+## 🎯 Objetivo
+Desarrollar una plataforma web que permita a los usuarios inscribirse en cursos online, gestionar su progreso y a los administradores crear y administrar cursos.
+
+## 🚀 Funcionalidades
+- Catálogo de cursos (GET /courses)
+- Detalle de curso (GET /courses/{id})
+- Matrícula de cursos (POST /enrollments)
+- Inscripciones de usuario (GET /enrollments/{userId})
+- Creación de cursos (POST /courses) [Admin]
+- Edición de cursos (PUT /courses/{id}) [Admin]
+- Eliminación de cursos (DELETE /courses/{id}) [Admin]
+- Autenticación JWT con roles (admin / alumno)
+
+## 🛠️ Requisitos
+- .NET 8 SDK
+- SQL Server
+
+## ▶️ Cómo ejecutar localmente
+1. Clonar el repositorio  
+   ```bash
+   git clone https://github.com/UPT-FAING-EPIS/examen-2025-ii-si784-u1-dennisdhm7.git
